@@ -1,30 +1,38 @@
 /* Add your color variables here */
 :root {
     --primary-color: #4abdac; /* Teal color from the logo */
-    --secondary-color: #fc4a1a; /* Dark blue color from the logo */
+    --secondary-color: #305f72; /* A darker shade for contrast */
     --accent-color: #f7b733; /* Green color from the logo */
+    --light-bg-color: #e8f8f5; /* A light background for sections */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Primary font */
+    --font-headings: 'Georgia', serif; /* Font for headings */
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-primary);
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: var(--light-bg-color);
+    color: var(--secondary-color);
 }
 
 header {
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    padding: 1em;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 1em 0;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #logo img {
-    height: 50px; /* Adjust as necessary */
+    height: 60px; /* Adjust as necessary */
     width: auto; /* This will keep the aspect ratio intact */
 }
 
@@ -41,30 +49,55 @@ nav ul li {
 nav a {
     text-decoration: none;
     color: white;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 #hero {
-    background: linear-gradient(to bottom, var(--primary-color) 0%, var(--accent-color) 100%);
+    background-image: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%), url('path-to-background-image.jpg');
+    background-size: cover;
+    background-position: center;
     text-align: center;
-    padding: 50px 20px;
+    padding: 100px 20px;
     color: white;
 }
 
 #hero h1 {
     margin: 0;
+    font-family: var(--font-headings);
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+#hero p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
 }
 
 button {
-    background: var(--secondary-color);
+    background: var(--accent-color);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     cursor: pointer;
     font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: var(--primary-color);
 }
 
 main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2em auto;
+    background-color: #fff;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -72,4 +105,9 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+    margin-top: 2em;
+}
+
+footer p {
+    margin: 0;
 }
